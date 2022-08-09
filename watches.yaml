@@ -4,4 +4,7 @@
   group: tackle.konveyor.io
   kind: Tackle
   role: tackle
+  finalizer:
+    name: tackle.konveyor.io/finalizer
+    playbook: playbooks/cleanup.yml
 #+kubebuilder:scaffold:watch

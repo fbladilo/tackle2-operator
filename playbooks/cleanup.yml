@@ -1,0 +1,21 @@
+- hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: "Retrieve k8s task pods"
+    k8s_info:
+      api_version: v1
+      kind: pod
+      namespace: konveyor-tackle
+      label_selectors:
+         - role = task
+    register: task_pods
+
+  - name: "Remove k8s task pods"
+    k8s:
+      api_version: v1
+      kind: pod
+      namespace: konveyor-tackle
+      name: "{{ item.metadata.name }}"
+      state: absent
+    loop: "{{ task_pods.resources }}"
+    when: (task_pods.resources|length) > 0
