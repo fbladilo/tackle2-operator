@@ -1,0 +1,65 @@
+---
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+spec:
+  tags:
+  - name: mta-rhel9-operator
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/tackle2-operator:release-0.8
+  - name: mta-analyzer-addon-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/tackle2-addon-analyzer:release-0.8
+  - name: mta-analyzer-lsp-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/analyzer-lsp:release-0.8
+  - name: mta-cli-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/kantra:release-0.8
+  - name: mta-discovery-addon-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/tackle2-addon-discovery:release-0.8
+  - name: mta-dotnet-external-provider-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/dotnet-external-provider:release-0.8
+  - name: mta-generic-external-provider-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/generic-external-provider:release-0.8
+  - name: mta-golang-dependency-provider-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/golang-dependency-provider:release-0.8
+  - name: mta-hub-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/tackle2-hub:release-0.8
+  - name: mta-java-external-provider-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/java-external-provider:release-0.8
+  - name: mta-jdtls-server-base-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/jdtls-server-base:release-0.8
+  - name: mta-platform-addon-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/tackle2-addon-platform:release-0.8
+  - name: mta-solution-server-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/kai-solution-server:release-0.8
+  - name: mta-static-report-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/static-report:release-0.8
+  - name: mta-ui-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/tackle2-ui:release-0.8
