@@ -9,8 +9,7 @@ COPY hack/build/${COMMUNITY_GENERAL} ${HOME}/${COMMUNITY_GENERAL}
 COPY hack/build/${COMMUNITY_POSTGRESQL} ${HOME}/${COMMUNITY_POSTGRESQL}
 RUN ansible-galaxy collection install ${HOME}/${COMMUNITY_GENERAL} ${HOME}/${COMMUNITY_POSTGRESQL} && rm ${HOME}/${COMMUNITY_GENERAL} ${HOME}/${COMMUNITY_POSTGRESQL}
 
-RUN dnf install -y python3-psycopg2 python3-jmespath && dnf clean all
-RUN dnf module install -y postgresql:15 && dnf clean all
+RUN dnf install -y postgresql python3-psycopg2 python3-jmespath && dnf clean all
 USER 1001
 COPY --chown=1001:0 watches.yaml ${HOME}/watches.yaml
 COPY --chown=1001:0 roles ${HOME}/roles
