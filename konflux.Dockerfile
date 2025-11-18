@@ -8,7 +8,7 @@ ARG COMMUNITY_POSTGRESQL="community-postgresql-3.10.2.tar.gz"
 COPY hack/build/${COMMUNITY_GENERAL} ${HOME}/${COMMUNITY_GENERAL}
 COPY hack/build/${COMMUNITY_POSTGRESQL} ${HOME}/${COMMUNITY_POSTGRESQL}
 RUN ansible-galaxy collection install ${HOME}/${COMMUNITY_GENERAL} ${HOME}/${COMMUNITY_POSTGRESQL} && rm ${HOME}/${COMMUNITY_GENERAL} ${HOME}/${COMMUNITY_POSTGRESQL}
-
+RUN dnf module enable -y postgresql:15
 RUN dnf install -y postgresql python3-psycopg2 python3-jmespath && dnf clean all
 USER 1001
 COPY --chown=1001:0 watches.yaml ${HOME}/watches.yaml
