@@ -52,7 +52,7 @@ updates:
   - search: "email: konveyor-dev@googlegroups.com"
     replace: "email: openshift-operators@redhat.com"
   - search: "name: Konveyor Community"
-    replace: "Red Hat"
+    replace: "name: Red Hat"
   - search: "name: Konveyor"
     replace: "name: Red Hat"
   - search: "url: https://www.konveyor.io"
