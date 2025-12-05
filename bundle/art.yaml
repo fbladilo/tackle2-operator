@@ -43,8 +43,8 @@ updates:
   # IDK where else to fix olm.SkipRange?
   - search: ">=0.0.0 <99.0.0"
     replace: ">=7.3.0 <8.0.99"
-  - search: "features.operators.openshift.io/fips-compliant: 'false'"
-    replace: "features.operators.openshift.io/fips-compliant: 'true'"
+  - search: "features.operators.openshift.io/fips-compliant: \"false\""
+    replace: "features.operators.openshift.io/fips-compliant: \"true\""
   - search: "support: https://github.com/konveyor/tackle2-operator/issues"
     replace: "support: Red Hat"
   - search: "Modernization & Migration"
@@ -57,8 +57,8 @@ updates:
     replace: "name: Red Hat"
   - search: "url: https://www.konveyor.io"
     replace: "url: https://www.redhat.com"
-  - search: "https://konveyor.github.io/tackle"
-    replace: "https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications"
+  - search: "url: https://konveyor.github.io/tackle"
+    replace: "url: https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications"
   - search: "name: Operator"
     replace: "name: Developers"
   - search: "url: https://github.com/konveyor/tackle2-operator"
@@ -71,6 +71,8 @@ updates:
     replace: image/svg+xml
   - search: "Konveyor is an open-source"
     replace: "Migration Toolkit for Applications is an"
+  - search: "to Kubernetes"
+    replace: "to OpenShift"
   - search: "Documentation can be found on our [website](https://konveyor.github.io/tackle)."
     replace: "Documentation can be found on our [website](https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications)."
   - search: "If you encounter any issues while using Konveyor operator, you can create an issue
