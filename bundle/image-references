@@ -1,0 +1,65 @@
+---
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+spec:
+  tags:
+  - name: mta-rhel9-operator
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/tackle2-operator:latest
+  - name: mta-analyzer-addon-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/tackle2-addon-analyzer:latest
+  - name: mta-analyzer-lsp-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/analyzer-lsp:latest
+  - name: mta-cli-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/kantra:latest
+  - name: mta-discovery-addon-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/tackle2-addon-discovery:latest
+  - name: mta-dotnet-external-provider-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/dotnet-external-provider:latest
+  - name: mta-generic-external-provider-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/generic-external-provider:latest
+  - name: mta-golang-dependency-provider-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/golang-dependency-provider:latest
+  - name: mta-hub-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/tackle2-hub:latest
+  - name: mta-java-external-provider-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/java-external-provider:latest
+  - name: mta-jdtls-server-base-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/jdtls-server-base:latest
+  - name: mta-platform-addon-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/tackle2-addon-platform:latest
+  - name: mta-solution-server-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/kai-solution-server:latest
+  - name: mta-static-report-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/static-report:latest
+  - name: mta-ui-rhel9
+    from:
+      kind: DockerImage
+      name: quay.io/konveyor/tackle2-ui:latest
