@@ -26,7 +26,7 @@ spec:
   - name: mta-dotnet-external-provider-rhel9
     from:
       kind: DockerImage
-      name: quay.io/konveyor/dotnet-external-provider:latest
+      name: quay.io/konveyor/c-sharp-provider:latest
   - name: mta-generic-external-provider-rhel9
     from:
       kind: DockerImage
