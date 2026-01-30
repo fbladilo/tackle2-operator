@@ -34,10 +34,6 @@ updates:
     replace: "# - name: RELATED_IMAGE_KEYCLOAK_SSO (unused downstream)"
   - search: "value: quay.io/keycloak/keycloak:26.1"
     replace: "# value: quay.io/keycloak/keycloak:26.1 (unused downstream)"
-  - search: "- name: RELATED_IMAGE_KEYCLOAK_INIT"
-    replace: "# - name: RELATED_IMAGE_KEYCLOAK_INIT (unused downstream)"
-  - search: "value: quay.io/konveyor/tackle-keycloak-init:latest"
-    replace: "# value: quay.io/konveyor/tackle-keycloak-init:latest (unused downstream)"
   # Shouldn't these (versioning) be handled by bundle create job??
   - search: "version: 99.0.0"
     replace: "version: 8.1.0"
