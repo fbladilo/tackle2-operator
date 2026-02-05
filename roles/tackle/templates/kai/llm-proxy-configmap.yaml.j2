@@ -12,7 +12,6 @@ data:
   run.yaml: |
     version: 2
     image_name: starter
-    external_providers_dir: /tmp/.llama/providers.d
     apis:
     - inference
     providers:
@@ -88,14 +87,14 @@ data:
           table_name: llm_proxy_conversations
           backend: sql_default
     registered_resources:
-      models:
 {% if kai_llm_model %}
+      models:
       - model_id: proxied-model
         provider_id: {{ kai_llm_proxy_provider_id }}
         model_type: llm
         provider_model_id: {{ kai_llm_model }}
 {% else %}
-      []
+      models: []
 {% endif %}
       shields: []
       vector_dbs: []

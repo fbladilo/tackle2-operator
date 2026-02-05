@@ -15,6 +15,7 @@ feature_analysis_archiver: true
 feature_discovery: true
 
 # Options.
+# task_pod_quota: 50
 disable_maven_search: false
 
 # Environment
@@ -131,6 +132,8 @@ keycloak_sso_tls_secret_name: "{{ keycloak_sso_service_name }}-serving-cert"
 keycloak_sso_port: "{{ '8443' if keycloak_sso_tls_enabled | bool else '8080' }}"
 keycloak_sso_proto: "{{ 'https' if keycloak_sso_tls_enabled | bool else 'http' }}"
 keycloak_sso_url: "{{ keycloak_sso_proto }}://{{ keycloak_sso_service_name }}.{{ app_namespace }}.svc:{{ keycloak_sso_port }}"
+keycloak_sso_hostname: ""
+keycloak_sso_hostname_backchannel_dynamic: false
 
 ui_image_fqin: "{{ lookup('env', 'RELATED_IMAGE_TACKLE_UI') }}"
 ui_component_name: "ui"
@@ -328,7 +331,7 @@ kai_database_address: kai-db.{{ app_namespace }}.svc
 
 # LLM Proxy configuration
 kai_llm_proxy_enabled: false
-kai_llm_proxy_image_fqin: "{{ lookup('env', 'RELATED_IMAGE_LLAMA_STACK') | default('docker.io/llamastack/distribution-starter:latest', true) }}"
+kai_llm_proxy_image_fqin: "{{ lookup('env', 'RELATED_IMAGE_LIGHTSPEED_STACK') | default('quay.io/lightspeed-core/lightspeed-stack:latest', true) }}"
 
 # Internal URL for the LLM proxy service (used by UI reverse proxy)
 kai_llm_proxy_url: "http://llm-proxy.{{ app_namespace }}.svc.cluster.local:8321"
